@@ -35,6 +35,7 @@ parser.add_argument('nimpath', type=str, help="The path to Nim repertory")
 parser.add_argument('libs', type=str, nargs='+', help="The Nim libray to export")
 parser.add_argument('-nc', '--no-cache', dest='no_cache', action="store_true", help="Don't use the cache when parsing types")
 parser.add_argument('-c', '--only-compile', dest='only_compile', action="store_true", help="Don't generate code, only compile")
+parser.add_argument('-u', '--update-cache-for', dest='update_cache', type=str, nargs='+', help="Update cache for the given")
 args = parser.parse_args()
 
 NIMPATH = args.nimpath
@@ -89,6 +90,15 @@ if path.exists(CACHE_PATH):
     with open(CACHE_PATH, 'rb') as f:
         cache = pickle.load(f)
     deep_update(meta_context, cache)
+
+if args.update_cache:
+    for remove_type in args.update_cache:
+        for s in meta_context:
+            while remove_type in meta_context[s]:
+                if type(meta_context[s]) == list:
+                    meta_context[s].remove(remove_type)
+                elif type(meta_context[s]) == dict:
+                    meta_context[s].pop(remove_type)
 
 # variables used when calling proc
 meta_variables = """
