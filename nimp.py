@@ -377,11 +377,11 @@ def get_param_value(from_type, dict_vars, context):
         # is refered by another.
         #   eg. AsyncEvent = ptr AsyncEventImpl
         #       but AsyncEventImpl is not exported!
-        # if len(context["history"]) > 1:
-        #     cast_to = context["history"][-2]
-        # else:
-        #     cast_to = from_type
-        #
+        if len(context["history"]) > 1:
+            cast_to = context["history"][-2]
+        else:
+            cast_to = from_type
+
         # USE_VARIABLE = True
         # from_type = from_type[9:]
         # RETURNER = lambda x: f"addr({x})"
