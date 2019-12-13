@@ -21,7 +21,7 @@ Once we have the exported procedures, it is possible to use tools such as [FireE
 3. Use NimP to generate code for a given set of libraries.
 4. Open the dummy binary built by NimP in IDA, and use *idb2pat* to export signatures for functions into PAT format (alt-F7 then select *idb2pat.py*).
 5. Use IDA FLAIR's *sigmake* to build the SIG file, containing the FLIRT rules.
-6. Add the SIG file into IDA's FLIRT rules directory (C:\Program Files:\IDA Pro X.Y:\sig:\pc:\).
+6. Add the SIG file into IDA's FLIRT rules directory (`C:\Program Files:\IDA Pro X.Y:\sig:\pc:\`).
 7. You are good to go. :-)
 
 
