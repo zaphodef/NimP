@@ -45,5 +45,8 @@ python3 nimp.py /path/to/Nim/ pure/math pure/httpclient
 In the `artefacts` directory, you will find:
 - a code produced by running NimP on all "pure/" libraries, and then manually corrected
 
+## Useful links
+- https://github.com/JohnDMcMaster/uvudec/wiki/IDA-.pat-format
+
 ## License
 NimP is licensed under the AGPL 3 (or newer) terms.
