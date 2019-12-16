@@ -41,9 +41,16 @@ python3 nimp.py /path/to/Nim/ pure/math
 python3 nimp.py /path/to/Nim/ pure/math pure/httpclient
 ```
 
+## Optimisations
+When you compile Nim code, you can choose among various optimisations. They will reflect on the resulting assembly code produced.
+Read the [Nim Compile User Guide](https://nim-lang.org/docs/nimc.html) to have further information. Among the possible optimisations :
+- `--opt:none|speed|size`
+- `-d:useMalloc`
+
 ## Artefacts
 In the `artefacts` directory, you will find:
 - a code produced by running NimP on all "pure/" libraries, and then manually corrected
+- a sigfile for Nim compiled in 32 bits mode with recommended MinGW 6.3.0 on Windows (opt: none & size & speed, malloc: with & without)
 
 ## Useful links
 - https://github.com/JohnDMcMaster/uvudec/wiki/IDA-.pat-format
